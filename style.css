@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.video-wrap {
+  width: 280px;
+  perspective: 1000px;
+}
+
+.alien {
+  width: 100%;
+  background-color: #1b991a;
+  height: 42rem;
+  border-radius: 9999px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+.astro {
+  width: 100%;
+  background-color: #251380;
+  height: 42rem;
+  border-radius: 9999px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+.cyclo {
+  width: 100%;
+  background-color: #321380;
+  height: 42rem;
+  border-radius: 9999px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.video-wrap:hover .alien {
+  transform: rotateY(360deg);
+}
+
+@keyframes stars {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes titlePulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+/* Floating Animation */
+.floating-image {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.floating-star {
+  animation: float 4s ease-in-out infinite, rotate 20s linear infinite;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    --tw-translate-y: -33%;
+  }
+  50% {
+    --tw-translate-y: calc(-33% - 10px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Character Cards Hover Effect */
+.character-card {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.character-card:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+  box-shadow: 0 0 30px rgba(167, 139, 250, 0.3);
+}
+
+/* Pose Cards */
+.spacer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.horizontal-scroll-wrapper {
+  position: relative;
+}
+
+.horizontal-section {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+  will-change: transform;
+}
+
+.intro-box {
+  min-width: 30vw;
+  height: 70vh;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.intro-box h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  width: 60%;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.intro-box p {
+  font-size: 1.2rem;
+
+  color: #fff;
+}
+
+.content-box {
+  width: 30vw;
+  height: 70vh;
+  border-radius: 20px;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  background-color: #260f85;
+  position: relative;
+}
+
+.content-box span {
+  position: absolute;
+  display: none;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.content-box:hover span {
+  display: block;
+}
+
+.content-box:hover {
+  background-color: #340f85;
+}
+
+.content-box .box-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.content-box .box-description {
+  font-size: 1rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* Detail Items with Glowing Stars */
+.detail-item {
+  position: relative;
+}
+
+.star-glow {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, #fbbf24 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glow 2s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Promo Banner */
+.promo-banner {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Smooth Button Transitions */
+a,
+button {
+  transition: all 0.3s ease;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Backdrop Blur Effects */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .promo-banner {
+    font-size: 0.875rem;
+  }
+}
+
+/* Section Spacing */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Image Loading Effect */
+img {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Link Hover Effects */
+a:not(.block) {
+  position: relative;
+}
+
+a:not(.block)::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+a:not(.block):hover::after {
+  width: 100%;
+}

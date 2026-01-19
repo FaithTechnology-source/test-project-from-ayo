@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spacers - Space 3D Illustrations and Characters</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="bg-[#090b36] text-white overflow-x-hidden">
+    <!-- Header -->
+    <header
+      class="container mx-auto px-4 pt-8 pb-14 fixed top-0 left-0 right-0 z-40"
+    >
+      <div class="flex items-center justify-between max-w-8xl mx-auto">
+        <div class="flex items-center gap-2">
+          <h1 class="text-2xl font-bold">Spacers</h1>
+          <span class="text-gray-400">by</span>
+          <img src="/images/webclip.png" class="w-8 h-8 rounded-full" />
+        </div>
+        <a
+          href="#"
+          class="bg-transparent border border-white px-6 py-2 rounded-full font-semibold transition"
+          >Download</a
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="px-4 py-20 text-center relative min-h-screen pt-[10rem]">
+      <div class="max-w-4xl mx-auto text-white relative z-10">
+        <p class="text-lg mb-4">Big 3d set with cosmic illustrations</p>
+        <h2 class="text-7xl md:text-[14rem] font-black mb-8 w-max text-white">
+          SPACERS
+        </h2>
+
+        <div class="mt-12">
+          <img
+            src="images/img-hero.png"
+            alt="Space Illustration Hero"
+            class="absolute w-[45rem] left-1/2 top-4/5 -translate-x-1/2 -translate-y-1/3 pointer-events-none select-none"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section class="container mx-auto px-4 py-20">
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-5xl font-extrabold mb-12 text-center">3 CHARACTERS</h3>
+        <p class="text-center text-gray-300 mb-16 max-w-md mx-auto">
+          We’ve created 3 different characters. Choose one that you like most
+          for your design projects
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="rounded-full flex flex-col items-center gap-4">
+            <video class="alien" muted poster="images/preview-19.png">
+              <source
+                src="https://d2pas86kykpvmq.cloudfront.net/img_spacers/videos/alien.webm"
+                type="video/webm"
+              />
+              <source
+                src="https://d2pas86kykpvmq.cloudfront.net/img_spacers/videos/alien.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <h4 class="text-xl font-semibold text-center">ALIEN</h4>
+          </div>
+          <div class="rounded-full flex flex-col items-center gap-4">
+            <video class="astro" muted poster="images/preview-6.png">
+              <source
+                src="https://d2pas86kykpvmq.cloudfront.net/img_spacers/videos/astro.webm"
+                type="video/webm"
+              />
+              <source
+                src="https://d2pas86kykpvmq.cloudfront.net/img_spacers/videos/astro.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <h4 class="text-xl font-semibold text-center">ASTRO</h4>
+          </div>
+          <div class="rounded-full flex flex-col items-center gap-4">
+            <video class="cyclo" muted poster="images/preview-43.png">
+              <source
+                src="https://d2pas86kykpvmq.cloudfront.net/img_spacers/videos/alien.webm"
+                type="video/webm"
+              />
+              <source
+                src="https://d2pas86kykpvmq.cloudfront.net/img_spacers/videos/alien.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <h4 class="text-xl font-semibold text-center">CYCLO</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality Section -->
+    <section class="container mx-auto px-4 py-20 h-[160vh]">
+      <div class="max-w-7xl mx-auto text-center relative">
+        <h2 class="text-5xl md:text-[13rem] font-black mb-16">
+          ULTRA HIGH QUALITY RENDERS
+        </h2>
+        <div class="flex justify-center gap-8">
+          <img
+            src="images/skater-p-800-removebg-preview.png"
+            alt="Quality Render"
+            class="w-64 md:w-[80rem] absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 mt-[35rem]"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Poses Section -->
+    <div class="horizontal-scroll-wrapper" id="wrapper">
+      <div class="horizontal-section">
+        <div class="scroll-track" id="scrollTrack">
+          <div class="intro-box">
+            <h1>12 DIFFERENT POSES</h1>
+            <p>By variety of funny poses.</p>
+          </div>
+          <div class="content-box box-1">
+            <img src="/images/preview-9.png" alt="" />
+            <span>SEARCHING</span>
+          </div>
+          <div class="content-box box-2">
+            <img src="/images/preview-10.png" alt="" />
+            <span>HUGGING</span>
+          </div>
+          <div class="content-box box-3">
+            <img src="/images/preview-13.png" alt="" />
+            <span>CHILLING</span>
+          </div>
+          <div class="content-box box-4">
+            <img src="/images/preview-11.png" alt="" />
+            <span>POINTING</span>
+          </div>
+          <div class="content-box box-5">
+            <img src="/images/preview-8.png" alt="" />
+            <span>STAR CATCHING</span>
+          </div>
+          <div class="content-box box-6">
+            <img src="/images/preview-5.png" alt="" />
+            <span>LIKE</span>
+          </div>
+          <div class="content-box box-6">
+            <img src="/images/preview-12.png" alt="" />
+            <span>STAR FISHING</span>
+          </div>
+          <div class="content-box box-6">
+            <img src="/images/preview-7.png" alt="" />
+            <span>ACHIEVEMENT</span>
+          </div>
+          <div class="content-box box-6">
+            <img src="/images/preview-6.png" alt="" />
+            <span>THUMBS UP</span>
+          </div>
+          <div class="content-box box-6">
+            <img src="/images/preview-14.png" alt="" />
+            <span>HANGING WITH ALIEN</span>
+          </div>
+          <div class="content-box box-6">
+            <img src="/images/skater-p-800-removebg-preview.png" alt="" />
+            <span>SPACE SKATE</span>
+          </div>
+          <div class="content-box box-6">
+            <img src="/images/preview-1_1-removebg-preview.png" alt="" />
+            <span>WITH LASER</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- For Digital Designers Section -->
+    <section class="container mx-auto px-4 py-20 relative h-[100vh]">
+      <div class="">
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="text-4xl md:text-8xl w-[90%] font-extrabold mb-20 text-center"
+          >
+            MADE SPECIALLY FOR DIGITAL DESIGNERS.
+          </h2>
+        </div>
+
+        <div
+          class="flex justify-between mb-20 absolute left-0 right-0 top-1/2 -translate-y-1/3 px-4"
+        >
+          <div class="text-center">
+            <img
+              src="images/spacer-alien.png"
+              alt="Alien Chilling"
+              class="w-[35rem]"
+            />
+          </div>
+          <div class="text-center">
+            <img
+              src="images/spacer-astro.png"
+              alt="Astronaut"
+              class="w-[35rem]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Where to Use Section -->
+    <section class="container mx-auto px-4 py-20">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <div class="order-2 w-1/2 flex flex-col items-start">
+          <h3 class="text-xl font-light mb-6">Where to use?</h3>
+          <p
+            class="text-center text-5xl mb-16 text-white text-start w-[90%] font-extrabold leading-[1.4]"
+          >
+            VIVID 3D <br />
+            ILLUSTRATIONS ARE PERFECT FOR APPS, LANDING OR ADS CAMPAIGNS
+          </p>
+        </div>
+
+        <div class="flex-1 flex-col justify-center gap-8 mb-12">
+          <img
+            src="images/phone-2.png"
+            alt="Mobile Preview"
+            class="rounded-3xl mb-20 shadow-2xl max-w-xs"
+          />
+          <img
+            src="images/phone-3.png"
+            alt="Mobile Preview"
+            class="rounded-3xl shadow-2xl mb-20 max-w-xs hidden md:block"
+          />
+          <img
+            src="images/phone-1.png"
+            alt="Mobile Preview"
+            class="rounded-3xl shadow-2xl max-w-xs hidden lg:block"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="bg-[#1a0840] mx-auto px-4 py-20">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-5xl md:text-6xl font-black mb-12">
+          USE DETAILS TO MAKE IT POP
+        </h2>
+        <p class="text-xl text-gray-300 mb-20 max-w-3xl mx-auto">
+          As they say "devil is in the details". Along with characters we
+          prepared small objects to make your product looking more professional
+        </p>
+
+        <div class="relative h-[100vh] flex justify-center items-center">
+          <img
+            src="images/preview-49.png"
+            alt="Details"
+            class="mx-auto w-[70rem] bg-black/10"
+          />
+          <img
+            src="images/preview-15.png"
+            alt="Details"
+            class="mx-auto w-[25rem] absolute -top-1/4 -left-1/4"
+          />
+          <img
+            src="images/preview-39.png"
+            alt="Details"
+            class="mx-auto w-[25rem] absolute top-1/4 -left-1/4"
+          />
+          <img
+            src="images/preview-4_1-p-500-removebg-preview.png"
+            alt="Details"
+            class="mx-auto w-[25rem] absolute -top-1/4 -right-1/4"
+          />
+          <img
+            src="images/preview-36.png"
+            alt="Details"
+            class="mx-auto w-[25rem] absolute top-1/4 -right-1/4"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Preview Gallery -->
+    <section class="container mx-auto px-4 py-20" id="preview">
+      <div class="max-w-7xl mx-auto">
+        <p class="text-2xl font-light text-center mt-16">48 items</p>
+
+        <h2 class="text-[8rem] font-extrabold mb-16 text-center">Preview</h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Preview images grid -->
+          <img
+            src="images/preview-1_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img
+            src="images/skater-p-800-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img
+            src="images/preview-3_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img
+            src="images/preview-4_1-p-500-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img src="images/preview-5.png" alt="Preview 1" class="" />
+          <img src="images/preview-6.png" alt="Preview 1" class="" />
+          <img src="images/preview-7.png" alt="Preview 1" class="" />
+          <img src="images/preview-8.png" alt="Preview 1" class="" />
+          <img src="images/preview-9.png" alt="Preview 1" class="" />
+          <img src="images/preview-10.png" alt="Preview 1" class="" />
+          <img src="images/preview-11.png" alt="Preview 1" class="" />
+          <img src="images/preview-12.png" alt="Preview 1" class="" />
+          <img src="images/preview-13.png" alt="Preview 1" class="" />
+          <img src="images/preview-14.png" alt="Preview 1" class="" />
+          <img src="images/preview-15.png" alt="Preview 1" class="" />
+          <img src="images/preview-43.png" alt="Preview 1" class="" />
+          <img src="images/preview-42.png" alt="Preview 1" class="" />
+          <img src="images/preview-46.png" alt="Preview 1" class="" />
+          <img
+            src="images/preview-45_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img
+            src="images/preview-16_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img src="images/preview-17.png" alt="Preview 1" class="" />
+          <img src="images/preview-18.png" alt="Preview 1" class="" />
+          <img src="images/preview-19.png" alt="Preview 1" class="" />
+          <img src="images/preview-20.png" alt="Preview 1" class="" />
+          <img src="images/preview-21.png" alt="Preview 1" class="" />
+          <img src="images/preview-22.png" alt="Preview 1" class="" />
+          <img src="images/preview-23.png" alt="Preview 1" class="" />
+          <img src="images/preview-24.png" alt="Preview 1" class="" />
+          <img src="images/preview-25.png" alt="Preview 1" class="" />
+          <img src="images/preview-26.png" alt="Preview 1" class="" />
+          <img
+            src="images/preview-27_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img
+            src="images/preview-28_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img
+            src="images/preview-29_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img
+            src="images/preview-30_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img
+            src="images/preview-31_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img
+            src="images/preview-32_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img src="images/preview-49.png" alt="Preview 1" class="" />
+          <img
+            src="images/preview-34_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img src="images/preview-35.png" alt="Preview 1" class="" />
+          <img src="images/preview-36.png" alt="Preview 1" class="" />
+          <img
+            src="images/preview-37_1-removebg-preview.png"
+            alt="Preview 1"
+            class=""
+          />
+          <img src="images/preview-38.png" alt="Preview 1" class="" />
+          <img src="images/preview-39.png" alt="Preview 1" class="" />
+          <img src="images/preview-40.png" alt="Preview 1" class="" />
+          <img src="images/preview-48.png" alt="Preview 1" class="" />
+          <img src="images/preview-47.png" alt="Preview 1" class="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="container mx-auto px-4 py-20" id="download">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Spacers Package -->
+          <div
+            class="bg-[#3333f2] backdrop-blur-sm rounded-3xl p-10 flex flex-col justify-between"
+          >
+            <h3 class="text-7xl font-bold mb-6">SPACERS</h3>
+            <ul class="space-y-3 mb-8 text-gray-200">
+              <li class="flex items-start gap-2">
+                <span class="text-white">•</span>
+                <span>3000x3000 resolution</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white">•</span>
+                <span>3 characters</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white">•</span>
+                <span>48 illustrations</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white">•</span>
+                <span>12 different poses</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white">•</span>
+                <span>PNG images</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white">•</span>
+                <span>Blender, ready render</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-white">•</span>
+                <span>Figma file</span>
+              </li>
+            </ul>
+            <a
+              href="#"
+              class="block w-3/5 bg-white/20 hover:bg-white/30 ml-auto text-center py-4 rounded-full font-bold text-lg transition"
+              >Purchase, $32</a
+            >
+          </div>
+
+          <!-- Pro Access -->
+          <div
+            class="bg-gradient-to-br from-[#15156e] to-[#3333a3] flex flex-col justify-between backdrop-blur-sm rounded-3xl p-10"
+          >
+            <h3 class="text-md font-light mb-6">PRO ACCESS</h3>
+            <p
+              class="text-white font-extrabold w-4/5 text-3xl mb-8 leading-relaxed"
+            >
+              GET ACCESS TO HUGE LIBRARY OF 3D ILLUSTRATIONS. 5000+ ASSETS, AND
+              REGULAR RELEASES.
+            </p>
+            <a
+              href="#"
+              class="block w-3/5 bg-white/20 hover:bg-white/30 ml-auto text-center py-4 rounded-full font-bold text-lg transition"
+              >Try, $12/month</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <section class="w-full flex justify-center px-6 mt-24">
+        <div
+          class="w-full max-w-6xl flex items-center justify-between gap-6 rounded-full border border-white/20 bg-transparent px-8 py-4 text-white"
+        >
+          <h3 class="text-2xl font-bold whitespace-nowrap">FREE DEMO</h3>
+
+          <p class="text-sm md:text-xl text-white/80 text-center flex-1">
+            Not sure about Spacers pack? Give it a free try!
+          </p>
+
+          <button
+            class="bg-white text-black font-bold px-6 py-2 rounded-full hover:scale-105 transition"
+          >
+            DOWNLOAD
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="w-full bg-gradient-to-b from-[#090b36] to-[#1a1230] text-white px-10 py-24"
+    >
+      <div class="max-w-screen mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+        <!-- Brand -->
+        <div class="space-y-6 flex flex-col justify-between items-start">
+          <div class="flex items-center gap-3">
+            <img src="/images/webclip.png" class="w-8 h-8 rounded-full" />
+
+            <span class="text-lg font-semibold">Wannathis</span>
+          </div>
+
+          <p class="text-xs text-white/40">© 2026 ALL RIGHTS RESERVED</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- <div class="w-max">
+            <img src="/images/ic-access_1ic-access.png" class="w-2" />
+          </div> -->
+          <!-- Products -->
+          <div class="space-y-4">
+            <h4 class="text-sm tracking-widest text-white/60">PRODUCTS</h4>
+            <ul class="space-y-3 text-sm font-medium">
+              <li>MOCKUPS</li>
+              <li>ABSTRACT</li>
+              <li>FREEBIES</li>
+              <li>CHARACTERS</li>
+              <li>THEMES</li>
+              <li>PRO ACCESS</li>
+            </ul>
+          </div>
+
+          <!-- Info -->
+          <div class="space-y-4">
+            <h4 class="text-sm tracking-widest text-white/60">INFO</h4>
+            <ul class="space-y-3 text-sm font-medium">
+              <li>LICENSE</li>
+              <li>AFFILIATE PROGRAM</li>
+              <li>BLOG</li>
+              <li>ORDER CUSTOM</li>
+              <li>TERMS OF USE</li>
+              <li class="text-white/70">HELP@WANNATHIS.ONE</li>
+            </ul>
+          </div>
+
+          <!-- Socials -->
+          <div class="space-y-4 md:text-right">
+            <h4 class="text-sm tracking-widest text-white/60">FOLLOW US</h4>
+            <div class="flex md:justify-end gap-4 text-xl">
+              <span><i class="fa-brands fa-instagram"></i></span>
+              <span><i class="fa-brands fa-behance"></i></span>
+              <span><i class="fa-brands fa-pinterest-p"></i></span>
+              <span><i class="fa-brands fa-twitter"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html
