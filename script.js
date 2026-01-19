@@ -60,7 +60,7 @@ window.addEventListener("load", () => {
     totalWidth += (boxes.length - 1) * 32; // Add gap spacing (2rem = 32px)
 
     maxScroll = totalWidth - window.innerWidth;
-    wrapper.style.height = ${maxScroll + window.innerHeight}px;
+    wrapper.style.height = `${maxScroll + window.innerHeight}px`;
 
     console.log("Total Width:", totalWidth);
     console.log("Max Scroll:", maxScroll);
