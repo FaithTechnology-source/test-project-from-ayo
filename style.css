@@ -5,6 +5,34 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Hero Image Floating - vertical only */
+.hero-float {
+  top: 65%; /* Lowered hero image below the heading */
+  left: 50%; /* Horizontally centered */
+  transform: translateX(-50%); /* Only horizontal centering */
+  animation: heroFloatVertical 6s ease-in-out infinite;
+  will-change: transform;
+  opacity: 1; /* Ensure visible */
+}
+
+/* Vertical Floating Animation */
+@keyframes heroFloatVertical {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  25% {
+    transform: translateX(-50%) translateY(-20px); /* move up */
+  }
+  50% {
+    transform: translateX(-50%) translateY(0);
+  }
+  75% {
+    transform: translateX(-50%) translateY(15px); /* move down */
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
 
 body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -88,15 +116,6 @@ html {
   animation: float 6s ease-in-out infinite;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    --tw-translate-y: -33%;
-  }
-  50% {
-    --tw-translate-y: calc(-33% - 10px);
-  }
-}
 
 @keyframes rotate {
   0% {
