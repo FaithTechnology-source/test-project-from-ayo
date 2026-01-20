@@ -34,7 +34,7 @@
   }
 }
 
-body {
+html, body {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   overflow-x: hidden;
@@ -150,23 +150,30 @@ html {
 
 .horizontal-scroll-wrapper {
   position: relative;
+  position: relative;
+  width: 100%;
+  height: 100vh; /* take full viewport height */
+  overflow: hidden; /* hide vertical scroll while in horizontal mode */
 }
 
 .horizontal-section {
-  position: sticky;
+  position: relative;
   top: 0;
   height: 100vh;
   overflow: hidden;
-  display: flex;
   align-items: center;
 }
 
 .scroll-track {
   display: flex;
   gap: 2rem;
-  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100%;
   will-change: transform;
 }
+
 
 .intro-box {
   min-width: 30vw;
@@ -195,21 +202,15 @@ html {
   color: #fff;
 }
 
+.imtro-box,
 .content-box {
-  width: 30vw;
-  height: 70vh;
-  border-radius: 20px;
+  flex: 0 0 auto;
+  width: 80vw; /* width of each pose */
+  height: 80%;
   display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 2rem;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  flex-shrink: 0;
-  background-color: #260f85;
-  position: relative;
+  justify-content: center;
 }
 
 .content-box span {

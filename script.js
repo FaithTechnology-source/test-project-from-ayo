@@ -1,99 +1,108 @@
-// Close Promo Banner
-const closeBanner = document.getElementById("closeBanner");
-const promoBanner = document.getElementById("promoBanner");
-const videos = document.querySelectorAll(".alien");
+// ------------------ PRO ACCESS BANNER (SMART TRIGGERS) ------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("pro-access-banner");
+  const characters = document.getElementById("characters");
+  const details = document.getElementById("details");
+  const closeBtn = document.getElementById("pro-banner-close");
 
-if (closeBanner && promoBanner) {
-  closeBanner.addEventListener("click", () => {
-    promoBanner.style.transform = "translateY(-100%)";
-    promoBanner.style.opacity = "0";
-    setTimeout(() => {
-      promoBanner.style.display = "none";
-    }, 300);
-  });
-}
+  if (!banner || !characters || !details) return;
 
-// Smooth Scroll for Navigation Links
+  let isClosed = false;
+
+  const showBanner = () => {
+    if (isClosed) return;
+    banner.classList.add("banner-show");
+    banner.classList.remove("banner-hide");
+  };
+
+  const hideBanner = () => {
+    banner.classList.add("banner-hide");
+    banner.classList.remove("banner-show");
+  };
+
+  // Show banner when Characters section appears
+  const charactersObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) showBanner();
+    },
+    { threshold: 0.3 }
+  );
+
+  // Hide banner when Details section appears
+  const detailsObserver = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) hideBanner();
+    },
+    { threshold: 0.2 }
+  );
+
+  charactersObserver.observe(characters);
+  detailsObserver.observe(details);
+
+  // Close button
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      hideBanner();
+      isClosed = true;
+      charactersObserver.disconnect();
+      detailsObserver.disconnect();
+    });
+  }
+});
+
+
+// ------------------ SMOOTH SCROLL FOR INTERNAL LINKS ------------------
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+    if (!target) return;
+
+    target.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   });
 });
 
-videos.forEach((video) => {
-  video.addEventListener("mouseenter", () => {
-    video.play();
-  });
 
-  video.addEventListener("mouseleave", () => {
-    video.pause();
-    video.currentTime = 0;
-  });
-});
+const horizontalSection = document.querySelector(".horizontal-scroll-wrapper");
+const scrollTrack = document.getElementById("scrollTrack");
+const contentBoxes = document.querySelectorAll(".content-box");
 
-// HORIZONTAL SCROLL SECTION - Combined with Parallax
-let wrapper, track, maxScroll;
+window.addEventListener("scroll", () => {
+  const sectionTop = horizontalSection.offsetTop;
+  const sectionHeight = horizontalSection.offsetHeight;
+  const scrollY = window.scrollY;
 
-// Initialize Horizontal Scroll on Load
-window.addEventListener("load", () => {
-  wrapper = document.getElementById("wrapper");
-  track = document.getElementById("scrollTrack");
+  // Total horizontal scrollable distance
+  const maxScroll = scrollTrack.scrollWidth - window.innerWidth;
 
-  console.log("Wrapper:", wrapper);
-  console.log("Track:", track);
+  // When section is in view → horizontal scroll
+  if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
+    const progress = (scrollY - sectionTop) / sectionHeight;
+    scrollTrack.style.transform = `translateX(-${progress * maxScroll}px)`;
 
-  if (wrapper && track) {
-    // Calculate the total width of all boxes
-    const boxes = track.children;
-    let totalWidth = 0;
-
-    for (let box of boxes) {
-      totalWidth += box.offsetWidth;
-    }
-    totalWidth += (boxes.length - 1) * 32; // Add gap spacing (2rem = 32px)
-
-    maxScroll = totalWidth - window.innerWidth;
-    wrapper.style.height = `${maxScroll + window.innerHeight}px`;
-
-    console.log("Total Width:", totalWidth);
-    console.log("Max Scroll:", maxScroll);
-    console.log("Wrapper Height Set:", wrapper.style.height);
-  } else {
-    console.error("Horizontal scroll elements not found!");
+    // Reveal boxes as they come into viewport horizontally
+    contentBoxes.forEach((box, index) => {
+      const boxProgress = index / (contentBoxes.length - 1); // 0 to 1
+      if (progress >= boxProgress * 0.9) {
+        box.classList.add("visible");
+      }
+    });
   }
-
-  console.log("Page loaded successfully!");
 });
 
-// Character Card Click Animation
-const characterCards = document.querySelectorAll(".character-card");
 
-characterCards.forEach((card) => {
-  card.addEventListener("click", function () {
-    characterCards.forEach((c) =>
-      c.classList.remove("ring-4", "ring-purple-400")
-    );
-    this.classList.add("ring-4", "ring-purple-400");
-    this.style.animation = "bounce 0.5s ease";
-    setTimeout(() => {
-      this.style.animation = "";
-    }, 500);
-  });
-});
 
-// Add bounce keyframes dynamically
+
+
+// ------------------ DYNAMIC KEYFRAMES ------------------
 const style = document.createElement("style");
 style.textContent = `
-    @keyframes bounce {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-    }
+@keyframes cardBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
 `;
 document.head.appendChild(style);
