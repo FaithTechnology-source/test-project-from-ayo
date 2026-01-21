@@ -1,4 +1,3 @@
-// ------------------ PRO ACCESS BANNER (SMART TRIGGERS) ------------------
 document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("pro-access-banner");
   const characters = document.getElementById("characters");
@@ -9,37 +8,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let isClosed = false;
 
+  // Show the banner
   const showBanner = () => {
     if (isClosed) return;
-    banner.classList.add("banner-show");
-    banner.classList.remove("banner-hide");
+    banner.classList.add("opacity-100", "pointer-events-auto");
+    banner.classList.remove("opacity-0", "pointer-events-none");
   };
 
+  // Hide the banner
   const hideBanner = () => {
-    banner.classList.add("banner-hide");
-    banner.classList.remove("banner-show");
+    banner.classList.remove("opacity-100", "pointer-events-auto");
+    banner.classList.add("opacity-0", "pointer-events-none");
   };
 
-  // Show banner when Characters section appears
+  // IntersectionObserver to detect #characters entering viewport
   const charactersObserver = new IntersectionObserver(
     ([entry]) => {
-      if (entry.isIntersecting) showBanner();
+      if (entry.isIntersecting && !isClosed) {
+        showBanner();
+      }
     },
-    { threshold: 0.3 }
+    { threshold: 0.1 } // trigger when 10% visible
   );
 
-  // Hide banner when Details section appears
+  // IntersectionObserver to detect #details entering viewport
   const detailsObserver = new IntersectionObserver(
     ([entry]) => {
-      if (entry.isIntersecting) hideBanner();
+      if (entry.isIntersecting) {
+        hideBanner();
+      }
     },
-    { threshold: 0.2 }
+    { threshold: 0.1 }
   );
 
   charactersObserver.observe(characters);
   detailsObserver.observe(details);
 
-  // Close button
+  // Close button functionality
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       hideBanner();
@@ -51,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ------------------ SMOOTH SCROLL FOR INTERNAL LINKS ------------------
+
+//Smooth scroll for internal links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -66,38 +72,62 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 
-const horizontalSection = document.querySelector(".horizontal-scroll-wrapper");
-const scrollTrack = document.getElementById("scrollTrack");
-const contentBoxes = document.querySelectorAll(".content-box");
+ 
+const posesSection = document.querySelector(".poses-scroll");
+const posesTrack = document.querySelector(".poses"); // your translate3d container
+
+// Total scrollable width of images
+const trackWidth = posesTrack.scrollWidth;
+const windowHeight = window.innerHeight;
+
+// Calculate start and end vertical scroll positions
+const sectionOffsetTop = posesSection.offsetTop;
+const startScroll = sectionOffsetTop - windowHeight / 2; // when section hits middle
+const endScroll = startScroll + trackWidth; // vertical scroll needed to move all images
 
 window.addEventListener("scroll", () => {
-  const sectionTop = horizontalSection.offsetTop;
-  const sectionHeight = horizontalSection.offsetHeight;
   const scrollY = window.scrollY;
 
-  // Total horizontal scrollable distance
-  const maxScroll = scrollTrack.scrollWidth - window.innerWidth;
+  if (scrollY >= startScroll && scrollY <= endScroll) {
+    // Freeze section in viewport
+    posesSection.style.position = "fixed";
+    posesSection.style.top = "0";
 
-  // When section is in view → horizontal scroll
-  if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight) {
-    const progress = (scrollY - sectionTop) / sectionHeight;
-    scrollTrack.style.transform = `translateX(-${progress * maxScroll}px)`;
+    // Compute horizontal translation
+    const progress = (scrollY - startScroll) / (endScroll - startScroll);
+    const translateX = -progress * trackWidth;
 
-    // Reveal boxes as they come into viewport horizontally
-    contentBoxes.forEach((box, index) => {
-      const boxProgress = index / (contentBoxes.length - 1); // 0 to 1
-      if (progress >= boxProgress * 0.9) {
-        box.classList.add("visible");
-      }
-    });
+    // Update only translate3d(x,0,0), preserve other transforms
+    let currentTransform = posesTrack.style.transform || posesTrack.getAttribute("style");
+    if (!currentTransform.includes("translate3d")) {
+      currentTransform = `translate3d(0px,0,0)` + currentTransform;
+    }
+    posesTrack.style.transform = currentTransform.replace(
+      /translate3d\([^)]+\)/,
+      `translate3d(${translateX}px,0,0)`
+    );
+
+  } else if (scrollY > endScroll) {
+    // After horizontal scroll completes
+    posesSection.style.position = "relative";
+    posesTrack.style.transform = posesTrack.style.transform.replace(
+      /translate3d\([^)]+\)/,
+      `translate3d(${-trackWidth}px,0,0)`
+    );
+  } else {
+    // Before horizontal scroll starts
+    posesSection.style.position = "relative";
+    posesTrack.style.transform = posesTrack.style.transform.replace(
+      /translate3d\([^)]+\)/,
+      `translate3d(0,0,0)`
+    );
   }
 });
 
 
 
 
-
-// ------------------ DYNAMIC KEYFRAMES ------------------
+//dynamic key frame
 const style = document.createElement("style");
 style.textContent = `
 @keyframes cardBounce {
