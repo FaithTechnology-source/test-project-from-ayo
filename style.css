@@ -7,12 +7,12 @@
 }
 /* Hero Image Floating - vertical only */
 .hero-float {
-  top: 65%; /* Lowered hero image below the heading */
-  left: 50%; /* Horizontally centered */
-  transform: translateX(-50%); /* Only horizontal centering */
+  top: 65%; 
+  left: 50%; 
+  transform: translateX(-50%); 
   animation: heroFloatVertical 6s ease-in-out infinite;
   will-change: transform;
-  opacity: 1; /* Ensure visible */
+  opacity: 1; 
 }
 
 /* Vertical Floating Animation */
